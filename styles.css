@@ -52,6 +52,53 @@
   margin-left : -35px;
 }
 
+/* NavBar Drop Down */
+
+
+.fa-caret-down{
+  margin-left: 8px;
+}
+.sub-menu{
+  display: none;
+}
+.sub-menu ul li{
+  list-style-type: none;
+}
+
+.sub-menu ul li a{
+  color: rgba(0,0,0,.5);
+}
+.sub-menu ul li .fa-atom, .fa-book-reader{
+  margin-right: 8px;
+}
+.sub-menu ul li a:hover{
+  text-decoration: none;
+  color:rgba(255,255,255) ;
+}
+.categories:hover .sub-menu{
+  display: block;
+  position: absolute;
+  background-color: #ffcc33;
+  /* padding: 1em; */
+  margin-left: 0;
+  width: 200px;
+}
+
+.categories:hover .sub-menu ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding:0;
+  margin-top:1em ;
+}
+
+.categories:hover .sub-menu ul li{
+  margin-bottom: 1em;
+}
+
+
 /* Bootstrap Gallery */
 
 main h1{
@@ -317,37 +364,59 @@ main h1{
     } */
     .checkbtn{
       display: block;
+      padding: 5px;
       font-size: 20px;
       /* margin-top: -30px; */
       z-index: 5;
     }
-    nav ul{
+    /* nav ul{
       position: fixed;
       width: fit-content;
       height: fit-content;
       /* height: 55vh; */
       /* background: #e69b06; */
-      top: 75px;
+      /* top: 75px;
       right: -200%;
+      text-align: center;
+      transition: all .5s; */
+      /* z-index: -1; */
+    /* } */ 
+
+    /* .navbar-expand{
+      z-index:-5;
+    } */
+    nav>ul{
+      position: absolute;
+      width: fit-content;
+      height: fit-content;
+      margin-right: 0;
+      padding: 0;
+      left: 5px;
+      top: 30px;
+      /* right: -200%; */
+      /* height: 55vh; */
+      /* background: #e69b06; */
       text-align: center;
       transition: all .5s;
       /* z-index: -1; */
     }
-    nav ul li{
-      display: block;
-      margin: 240px 0;
+    nav>ul li{
+      display: none;
+      /* margin: 240px 0; */
       line-height: 20px;
+      padding: 0;
+      margin:0 ;
     }
-    nav ul li a{
-      font-size: 10px;
+    nav>ul li a{
+      font-size: 10.5px;
       font-weight: bolder;
     }
-    nav ul li a:hover , .nav ul li a:active{
+    nav>ul li a:hover , .nav>ul li a:active{
       background: none;
       color: #F3722C;
     }
-    #check:checked ~ ul{
-      right: 0;
+    #check:checked ~ ul li{
+      display: block;
       left: 0;
     }
     }
@@ -383,32 +452,41 @@ main h1{
         .checkbtn{
           display: block;
         }
-        nav ul{
-          position: fixed;
+        nav>ul{
+          display: none;
+          position: absolute;
           width: fit-content;
-          height: 100vh;
+          height: fit-content;
+          margin-right: 0;
+          padding: 0;
+          top: 30px;
+          left: 5px;
+          /* right: -70%; */
+          /* height: 55vh; */
           /* background: #e69b06; */
-          top: 80px;
-          right: -200%;
           text-align: center;
           transition: all .5s;
           /* z-index: -1; */
         }
-        nav ul li{
-          display: block;
-          margin: 230px 0;
+        nav>ul li{
+          display: none;
+        /* margin: 240px 0; */
           line-height: 20px;
+          padding: 0;
+          margin:0 ;
         }
-        nav ul li a{
-          font-size: 20px;
+        nav>ul li a{
+          font-size: 18px;
+          font-weight: bold;
         }
-        nav ul li a:hover , .nav ul li a:active{
+        nav>ul li a:hover , .nav>ul li a:active{
           background: none;
           color: #F3722C;
         }
-        #check:checked ~ ul{
+        #check:checked ~ ul li{
           right: 0;
           left: 0;
+          display: block;
         }
     
       }
